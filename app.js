@@ -14,7 +14,9 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 
 mongoose.connect(
-  "mongodb+srv://admin-shantanu:pass1234@cluster0.t9vhn.mongodb.net/userDB",
+  "mongodb+srv://admin-shantanu:" +
+    process.env.MONGOOSE +
+    "@cluster0.t9vhn.mongodb.net/userDB",
   { useNewUrlParser: true }
 );
 
@@ -70,6 +72,6 @@ app
     });
   });
 
-app.listen(8000, function () {
-  console.log("Server started on port 8000.");
+app.listen(3000, function () {
+  console.log("Server started on port 6000.");
 });
